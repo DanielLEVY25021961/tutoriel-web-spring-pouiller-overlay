@@ -4,7 +4,9 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module deploy-path="/" handle="module:/overlay/prj/tutoriel-web-spring-pouiller?includes=**/**&amp;excludes=WEB-INF/classes/images/sampleimage-dependency.jpg;index.html">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <dependent-module deploy-path="/" handle="module:/overlay/prj/tutoriel-web-spring-pouiller?includes=D:\Donnees\eclipse\eclipseworkspace_neon\tutoriel-web-spring-pouiller-overlay/index_cible.html;D:\Donnees\eclipse\eclipseworkspace_neon\tutoriel-web-spring-pouiller-overlay/cerbere-prod.4.3.3.jar&amp;excludes=index.html">
             <dependency-type>consumes</dependency-type>
         </dependent-module>
         <dependent-module deploy-path="/" handle="module:/overlay/slf/?includes=**/**&amp;excludes=META-INF/MANIFEST.MF">
