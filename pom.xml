@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>levy.daniel.application</groupId>
+	<artifactId>tutoriel-web-spring-pouiller-overlay</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>levy.daniel.application</groupId>
+			<artifactId>tutoriel-web-spring-pouiller</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<overlays>
+						<overlay>
+							<groupId>levy.daniel.application</groupId>
+							<artifactId>tutoriel-web-spring-pouiller</artifactId>
+							<excludes>
+								<exclude>WEB-INF/classes/images/sampleimage-dependency.jpg</exclude>
+								<exclude>index.html</exclude>
+							</excludes>
+						</overlay>
+					</overlays>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<compilerArguments>
+						<endorseddirs>${endorsed.dir}</endorseddirs>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<profiles>
+
+		<profile>
+			<id>profil-dev</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- <tomcatPath>/path/to/tomcat/instance</tomcatPath> -->
+			</properties>
+
+			<build>
+				<plugins>
+					<plugin>
+						<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>3.1.0</version>
+						<configuration>
+							<overlays>
+								<overlay>
+									<groupId>levy.daniel.application</groupId>
+									<artifactId>tutoriel-web-spring-pouiller</artifactId>
+									<excludes>
+										<exclude>WEB-INF/vues/bonjour.jsp</exclude>
+									</excludes>
+								</overlay>
+							</overlays>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+
+
+
+
+</project>
