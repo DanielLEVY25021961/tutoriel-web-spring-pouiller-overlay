@@ -64,12 +64,12 @@
 		<!-- LE WAR A SURCHARGER doit être vu comme une DEPENDANCE. -->
 		<!-- LE WAR LIVRE PAR LE PRESTATAIRE DOIT AVOIR ETE INSTALLE DANS LE DEPOT 
 			LOCAL (.m2/repository) -->
-		<!-- <dependency> -->
-		<!-- <groupId>levy.daniel.application</groupId> -->
-		<!-- <artifactId>tutoriel-web-spring-pouiller</artifactId> -->
-		<!-- <version>0.0.1-SNAPSHOT</version> -->
-		<!-- <type>war</type> -->
-		<!-- </dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>levy.daniel.application</groupId> -->
+<!-- 			<artifactId>tutoriel-web-spring-pouiller</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 			<type>war</type> -->
+<!-- 		</dependency> -->
 
 		<!-- CAS SANS PROJET CIBLE -->
 		<!-- LE WAR A SURCHARGER est vu comme une RESSOURCE EXTERNE. -->
@@ -82,7 +82,7 @@
 			<!-- RAJOUTER LE SCOPE SYSTEM -->
 			<scope>system</scope>
 			<!-- Indique le path de l'artefact (war) à surcharger. -->
-			<systemPath>${basedir}/tutoriel-web-spring-pouiller-0.0.1-SNAPSHOT.war</systemPath>
+			<systemPath>D:/PROJET_FINAL/tutoriel-web-spring-pouiller-0.0.1-SNAPSHOT.war</systemPath>
 		</dependency>
 
 	</dependencies>
@@ -104,9 +104,10 @@
 							<artifactId>tutoriel-web-spring-pouiller</artifactId>
 							<!-- Exclure les jar et ressources voulus. -->
 							<excludes>
-<!-- 								<exclude>index.html</exclude> -->
+								<exclude>index.html</exclude>
 								<!-- <exclude>cerbere-bouchon.4.4.2.jar</exclude> -->
 							</excludes>
+							<!-- A QUI CA SERT ??? -->
 							<includes>
 <!-- 								<include>${basedir}/index_cible.html</include> -->
 <!-- 								<include>${basedir}/cerbere-prod.4.3.3.jar</include> -->
